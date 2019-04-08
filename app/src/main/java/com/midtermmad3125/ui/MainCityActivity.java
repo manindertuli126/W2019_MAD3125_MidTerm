@@ -15,5 +15,11 @@ public class MainCityActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getJsonData();
+    }
+
+    public void getJsonData (){
+        String JsonData = ReadJSONUtils.loadJSONFromAsset(this,"moscow_weather.json");
+        
     }
 }
