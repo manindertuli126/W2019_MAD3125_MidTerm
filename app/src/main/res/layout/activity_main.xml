@@ -17,10 +17,10 @@
         android:text="DisplayWeather"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/citypop" />
+        app:layout_constraintTop_toBottomOf="@+id/citycodelbl" />
 
     <TextView
-        android:id="@+id/cityname"
+        android:id="@+id/citynamelbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -33,29 +33,29 @@
         tools:text="cityname" />
 
     <TextView
-        android:id="@+id/citylat"
+        android:id="@+id/citylatlbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityname"
+        app:layout_constraintTop_toBottomOf="@+id/citynamelbl"
         tools:text="lat" />
 
     <TextView
-        android:id="@+id/citylon"
+        android:id="@+id/citylonlbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:text="lon"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityname" />
+        app:layout_constraintTop_toBottomOf="@+id/citynamelbl" />
 
     <TextView
-        android:id="@+id/citypop"
+        android:id="@+id/citypoplbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -64,6 +64,19 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/citylat"
+        app:layout_constraintTop_toBottomOf="@+id/citylatlbl"
         tools:text="population" />
+
+    <TextView
+        android:id="@+id/citycodelbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/citypoplbl"
+        tools:text="Code" />
 </android.support.constraint.ConstraintLayout>
