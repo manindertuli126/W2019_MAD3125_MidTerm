@@ -20,6 +20,6 @@ public class MainCityActivity extends AppCompatActivity
 
     public void getJsonData (){
         String JsonData = ReadJSONUtils.loadJSONFromAsset(this,"moscow_weather.json");
-        
+
     }
 }
