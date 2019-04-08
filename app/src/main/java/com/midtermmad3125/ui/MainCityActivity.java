@@ -7,6 +7,9 @@ import android.util.Log;
 import com.midtermmad3125.R;
 import com.midtermmad3125.utils.ReadJSONUtils;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class MainCityActivity extends AppCompatActivity
 {
 
@@ -21,5 +24,12 @@ public class MainCityActivity extends AppCompatActivity
     public void getJsonData (){
         String JsonData = ReadJSONUtils.loadJSONFromAsset(this,"moscow_weather.json");
 
+        try {
+            JSONObject cityData = new JSONObject(JsonData);
+            JSONObject cityObject= cityData.getJSONObject("city");
+            String cityid = cityObject.getString("name");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
