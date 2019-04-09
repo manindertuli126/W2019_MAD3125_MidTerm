@@ -13,6 +13,7 @@ import com.midtermmad3125.R;
 import com.midtermmad3125.utils.ReadJSONUtils;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
@@ -42,13 +43,11 @@ public class MainCityActivity extends AppCompatActivity
         citypopulation = findViewById(R.id.citypoplbl);
 
         getJsonData();
-
-
-
     }
 
     public void weatherDetailsclick(View v){
         Intent iIntend = new Intent(MainCityActivity.this,WeatherListActivity.class);
+//        iIntend.putExtra(weatherclassArray,"weatherDetails");
         startActivity(iIntend);
     }
 
@@ -76,38 +75,7 @@ public class MainCityActivity extends AppCompatActivity
 
             citycode.setText("Country: "+cityObject.getString("country"));
             citypopulation.setText("Population: "+cityObject.getString("population"));
-
-            JSONArray wList = Data.getJSONArray("list");
-            for(int y2 = 0; y2 < wList.length(); y2++){
-                JSONObject weatherDetail = wList.getJSONObject(y2);
-                String weatherDate = weatherDetail.getString("dt");
-
-                String weatherpressure = weatherDetail.getString("pressure");
-                String weatherhumidity = weatherDetail.getString("humidity");
-                String weatherspeed = weatherDetail.getString("speed");
-                String weatherdeg = weatherDetail.getString("deg");
-                String weatherclouds = weatherDetail.getString("clouds");
-                String weatherrain = weatherDetail.getString("rain");
-
-                JSONObject weatherTemp = weatherDetail.getJSONObject("temp");
-                String weatherday = weatherTemp.getString("day");
-                String weathermin = weatherTemp.getString("min");
-                String weathermax = weatherTemp.getString("max");
-                String weathernight = weatherTemp.getString("night");
-                String weathereve = weatherTemp.getString("eve");
-                String weathermorn = weatherTemp.getString("morn");
-                Temperature temp = new Temperature(weatherday,weathermin,weathermax,weathernight,weathereve,weathermorn);
-
-                JSONObject weatherdet = weatherDetail.getJSONObject("weather");
-                String weatherid = weatherdet.getString("id");
-                String weathermain = weatherdet.getString("main");
-                String weatherdescription = weatherdet.getString("description");
-                String weathericon = weatherdet.getString("icon");
-                Weather weather = new Weather(weatherid,weathermain,weatherdescription,weathericon);
-
-                weatherclassArray.add(new weatherList(weatherDate,temp,weatherpressure,weatherhumidity,weather,weatherspeed,weatherdeg,weatherclouds,weatherrain));
-            }
-        }catch(Exception e){
+        }catch(JSONException e){
             e.printStackTrace();
         }
     }

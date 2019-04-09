@@ -1,6 +1,8 @@
 package com.midtermmad3125.Modal;
 
-public class Temperature {
+import java.io.Serializable;
+
+public class Temperature implements Serializable {
 
     private String day;
     private String min;

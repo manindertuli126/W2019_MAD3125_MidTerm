@@ -1,6 +1,8 @@
 package com.midtermmad3125.Modal;
 
-public class Weather {
+import java.io.Serializable;
+
+public class Weather implements Serializable {
 
     private String id;
     private String main;
