@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class WeatherListActivity extends AppCompatActivity
 {
 
-    private ArrayList<weatherList> weatherclassArray;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
