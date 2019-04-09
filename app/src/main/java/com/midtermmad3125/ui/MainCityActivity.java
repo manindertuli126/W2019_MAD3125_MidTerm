@@ -15,7 +15,10 @@ import com.midtermmad3125.utils.ReadJSONUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class MainCityActivity extends AppCompatActivity
 {
@@ -49,6 +52,16 @@ public class MainCityActivity extends AppCompatActivity
         startActivity(iIntend);
     }
 
+//    public static String getDateFromTimeStamp(long time)
+//    {
+//        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+//        cal.setTimeInMillis(time * 1000L);
+//        String date = DateFormat.format("EEEE", cal).toString();
+//        date += "\n" + DateFormat.format("dd MMM yyyy", cal).toString();
+//        date += "\n" + DateFormat.format("hh:mm a", cal).toString();
+//        return date;
+//    }
+
     public void getJsonData (){
         String JsonData = ReadJSONUtils.loadJSONFromAsset(this,"moscow_weather.json");
 
@@ -68,6 +81,7 @@ public class MainCityActivity extends AppCompatActivity
             for(int y2 = 0; y2 < wList.length(); y2++){
                 JSONObject weatherDetail = wList.getJSONObject(y2);
                 String weatherDate = weatherDetail.getString("dt");
+
                 String weatherpressure = weatherDetail.getString("pressure");
                 String weatherhumidity = weatherDetail.getString("humidity");
                 String weatherspeed = weatherDetail.getString("speed");

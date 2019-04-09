@@ -4,6 +4,7 @@ import com.midtermmad3125.Modal.Temperature;
 import com.midtermmad3125.Modal.Weather;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class weatherList implements Serializable{
 
